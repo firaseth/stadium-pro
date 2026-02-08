@@ -49,7 +49,9 @@ const Toast = ({ message, type, onClose }: { message: string, type: 'info' | 'al
 const BrandLogo = () => (
   <div className="flex items-center gap-4 group cursor-pointer select-none">
     <div className="relative">
+      {/* Outer glow */}
       <div className="absolute -inset-2 bg-gradient-to-tr from-blue-600/40 via-indigo-500/20 to-emerald-400/30 rounded-[1.2rem] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+      
       <div className="relative w-14 h-14 bg-slate-950 border border-slate-800 rounded-[1.2rem] flex items-center justify-center overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-500 group-hover:border-blue-500/50">
         <svg viewBox="0 0 100 100" className="w-10 h-10">
           <defs>
@@ -75,7 +77,7 @@ const BrandLogo = () => (
       </div>
     </div>
     <div className="flex flex-col">
-      <h1 className="text-xl font-black tracking-tighter text-white leading-none">Stadium<span className="text-blue-500">PRO</span></h1>
+      <h1 className="text-xl font-black tracking-tighter text-white leading-none">FI <span className="text-blue-500">Stadium</span></h1>
       <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1.5 flex items-center gap-1.5">
         <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
         AI-CORE ACTIVE
@@ -851,6 +853,17 @@ const AIAssistant = () => {
 
   return (
     <div className="max-w-5xl mx-auto h-[calc(100vh-250px)] flex flex-col bg-slate-900 border border-slate-800 rounded-[3rem] overflow-hidden shadow-2xl">
+      <div className="p-8 border-b border-slate-800/50 flex items-center justify-between bg-slate-900/80 backdrop-blur-xl">
+        <div className="flex items-center gap-5">
+          <div className="w-14 h-14 bg-blue-600 rounded-[1.5rem] flex items-center justify-center shadow-2xl shadow-blue-900/50 border border-blue-400/20">
+            <Sparkles className="text-white" size={28} />
+          </div>
+          <div>
+            <h3 className="font-black text-lg tracking-tight text-white">FI Stadium Intel</h3>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">Model: Gemini Ultra v4</p>
+          </div>
+        </div>
+      </div>
       <div className="flex-1 overflow-y-auto p-10 space-y-8 bg-slate-950/20">
         {messages.map((m, i) => (
           <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -896,7 +909,7 @@ export default function App() {
         <div className="p-12 max-w-screen-2xl mx-auto flex-1 w-full space-y-12">{renderView()}</div>
         <footer className="px-12 py-12 border-t border-slate-900 bg-slate-950/80">
           <div className="flex justify-between items-center">
-            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black">StadiumPRO AI Suite v4.5</p>
+            <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black">FI Stadium AI Suite v4.5</p>
             <p className="text-[11px] text-slate-500 font-black uppercase tracking-[0.2em]">Administrator by <span className="text-blue-500 bg-blue-500/5 px-2.5 py-1 rounded-lg">Firas.com</span></p>
           </div>
         </footer>
